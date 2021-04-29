@@ -69,7 +69,7 @@ public class ImagePickerModule extends ReactContextBaseJavaModule implements Act
         this.callback = callback;
         this.options = new Options(options);
 
-        if (this.options.saveToPhotos && Build.VERSION.SDK_INT <= Build.VERSION_CODES.P && !hasPermission(currentActivity)) {
+        if (this.options.saveToPhotos && Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {
             callback.invoke(getErrorMap(errPermission, null));
             return;
         }
